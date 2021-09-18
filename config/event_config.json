@@ -1,0 +1,16 @@
+{
+    "fields": [
+        {
+            "name": "event", "type": "struct",
+            "fields": [
+                {"name": "w", "type": "double"},
+                {"name": "w2", "type": "double"},
+                {"name": "trigger_mask", "type": "list", "contains": {"type": "bool"}}
+            ]
+        }
+    ],
+    "metadata": {
+        "dataset_name": "foobar",
+        "creation_data": "2021/09/17"
+    }
+}

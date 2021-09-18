@@ -1,0 +1,69 @@
+{
+    "fields": [
+        {
+            "name": "event", "type": "struct",
+            "fields": [
+                {"name": "w", "type": "double"},
+                {"name": "w2", "type": "double"},
+                {"name": "trigger_mask", "type": "list", "contains": {"type": "bool"}}
+            ]
+        },
+        {
+            "name": "leptons", "type": "struct",
+            "fields": [
+                {"name": "n", "type": "uint32"},
+                {"name": "leptons", "type": "list",
+                    "contains": {"type": "struct",
+                        "fields":[
+                            {"name": "pt", "type": "float"},
+                            {"name": "eta", "type": "float"},
+                            {"name": "phi", "type": "float"},
+                            {"name": "flavor", "type": "uint32"},
+                            {"name": "trigger_match_mask", "type": "list", "contains": {"type": "bool"}},
+                            {"name": "isLoose", "type": "bool"},
+                            {"name": "isMedium", "type": "bool"},
+                            {"name": "isTight", "type": "bool"}
+                        ]
+                    }
+               }
+           ]
+        },
+        {
+            "name": "jets", "type": "struct",
+            "fields": [
+                {"name": "n", "type": "uint32"},
+                {"name": "jets", "type": "list",
+                    "contains": {"type": "struct",
+                        "fields":[
+                            {"name": "pt", "type": "float"},
+                            {"name": "eta", "type": "float"},
+                            {"name": "phi", "type": "float"},
+                            {"name": "mass", "type": "float"},
+                            {"name": "truthHadronPt", "type": "float"},
+                            {"name": "truthHadronId", "type": "uint32"},
+                            {"name": "nTrk", "type": "uint32"},
+                            {"name": "isBJet", "type": "bool"},
+                            {"name": "bTagScore", "type": "float"}
+                        ]
+                    }
+               }
+           ]
+        },
+        {
+            "name": "met", "type": "struct",
+            "fields": [
+                {"name": "sumEt", "type": "float"},
+                {"name": "met", "type": "float"},
+                {"name": "phi", "type": "float"},
+                {"name": "electronTerm", "type": "float"},
+                {"name": "muonTerm", "type": "float"},
+                {"name": "jetTerm", "type": "float"},
+                {"name": "softTerm", "type": "float"}
+            ]
+        }
+    ],
+    "metadata": {
+        "dataset_name": "foobar",
+        "creation_data": "2021/09/17"
+    }
+}

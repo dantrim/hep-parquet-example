@@ -1,0 +1,27 @@
+{
+    "fields": [
+        {
+            "name": "leptons", "type": "list",
+            "contains": {"type": "struct",
+                "fields": [
+                           {"name": "pt", "type": "float"},
+                           {"name": "eta", "type": "float"},
+                           {"name": "phi", "type": "float"},
+                           {"name": "flavor", "type": "uint32"},
+                           {"name": "trigger_match_mask", "type": "list", "contains": {"type": "bool"}},
+                           {"name": "isLoose", "type": "bool"},
+                           {"name": "isMedium", "type": "bool"},
+                           {"name": "isTight", "type": "bool"}
+                          ]
+                   }
+        },
+        {
+            "name": "event", "type": "struct",
+            "fields": [{"name": "w", "type": "double"}]
+        }
+    ],
+    "metadata": {
+        "dataset_name": "foobar",
+        "creation_data": "2021/09/17"
+    }
+}

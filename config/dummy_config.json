@@ -1,0 +1,16 @@
+{
+    "fields": [
+        {
+            "name": "leptons", "type": "list",
+            "contains": {"type": "struct",
+                "fields":[
+                    {"name": "pt", "type": "float"}
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "dataset_name": "foobar",
+        "creation_data": "2021/09/17"
+    }
+}
