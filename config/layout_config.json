@@ -1,25 +1,26 @@
 {
     "fields": [
         {
-            "name": "event", "type": "struct",
+            "name": "event_container", "type": "struct",
             "fields": [
+                {"name": "index", "type": "uint32"},
                 {"name": "w", "type": "double"},
                 {"name": "w2", "type": "double"},
-                {"name": "trigger_mask", "type": "list", "contains": {"type": "bool"}}
+                {"name": "trigger_mask", "type": "list1d", "contains": {"type": "bool"}}
             ]
         },
         {
-            "name": "leptons", "type": "struct",
+            "name": "lepton_container", "type": "struct",
             "fields": [
-                {"name": "n", "type": "uint32"},
-                {"name": "leptons", "type": "list",
+                {"name": "size", "type": "uint32"},
+                {"name": "leptons", "type": "list1d",
                     "contains": {"type": "struct",
                         "fields":[
                             {"name": "pt", "type": "float"},
                             {"name": "eta", "type": "float"},
                             {"name": "phi", "type": "float"},
                             {"name": "flavor", "type": "uint32"},
-                            {"name": "trigger_match_mask", "type": "list", "contains": {"type": "bool"}},
+                            {"name": "trigger_match_mask", "type": "list1d", "contains": {"type": "bool"}},
                             {"name": "isLoose", "type": "bool"},
                             {"name": "isMedium", "type": "bool"},
                             {"name": "isTight", "type": "bool"}
@@ -29,10 +30,10 @@
            ]
         },
         {
-            "name": "jets", "type": "struct",
+            "name": "jet_container", "type": "struct",
             "fields": [
-                {"name": "n", "type": "uint32"},
-                {"name": "jets", "type": "list",
+                {"name": "size", "type": "uint32"},
+                {"name": "jets", "type": "list1d",
                     "contains": {"type": "struct",
                         "fields":[
                             {"name": "pt", "type": "float"},
@@ -50,7 +51,7 @@
            ]
         },
         {
-            "name": "met", "type": "struct",
+            "name": "met_container", "type": "struct",
             "fields": [
                 {"name": "sumEt", "type": "float"},
                 {"name": "met", "type": "float"},
