@@ -1,23 +1,22 @@
 {
     "fields": [
         {
-            "name": "leptons", "type": "list",
-            "contains": {"type": "struct",
-                "fields": [
-                           {"name": "pt", "type": "float"},
-                           {"name": "eta", "type": "float"},
-                           {"name": "phi", "type": "float"},
-                           {"name": "flavor", "type": "uint32"},
-                           {"name": "trigger_match_mask", "type": "list", "contains": {"type": "bool"}},
-                           {"name": "isLoose", "type": "bool"},
-                           {"name": "isMedium", "type": "bool"},
-                           {"name": "isTight", "type": "bool"}
-                          ]
-                   }
-        },
-        {
-            "name": "event", "type": "struct",
-            "fields": [{"name": "w", "type": "double"}]
+            "name": "leptons", "type": "struct",
+            "fields":[
+                {"name": "size", "type": "uint32"},
+                {"name": "leptons", "type": "list1d", "contains": {"type":"struct",
+                    "fields": [
+                        {"name": "pt", "type": "float"},
+                        {"name": "eta", "type": "float"},
+                        {"name": "phi", "type": "float"},
+                        {"name": "flavor", "type": "uint32"},
+                        {"name": "trigger_match_mask", "type": "list1d", "contains": {"type": "bool"}},
+                        {"name": "isLoose", "type": "bool"},
+                        {"name": "isMedium", "type": "bool"},
+                        {"name": "isTight", "type": "bool"}
+                    ]
+                }}
+             ]
         }
     ],
     "metadata": {
